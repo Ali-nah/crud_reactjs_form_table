@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Form } from 'react-bootstrap'
+import { Button, Form,Row, Col } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import array from './array';
 import { v4 as uuid } from 'uuid';
@@ -50,7 +50,7 @@ return (
 
 <Form.Group className="d-grid gap-2"  controlId="formBasicSelect">
 <label style={{textAlign:'left'}}>Layout:</label>
-        <Form.Select style={{width:'30px'}}
+        <Form.Select 
           as="select"
           value={layout}
           onChange={e => {
@@ -75,11 +75,12 @@ in a setname using usestate*/}
 
 	{/* Fetching a value from input textfirld in
 	a setage using usestate*/}
-<Form.Group  className="d-grid gap-2" controlId="formBasicNumber">
-        <label style={{textAlign:'left'}}>Capacity:</label>
+<Form.Group  as={Row} className="d-grid gap-2" controlId="formBasicNumber">
+        <Form.Label column sm={2} style={{textAlign:'left'}}>Capacity:</Form.Label>
+		<Col sm={10}>
 	<Form.Control onChange={e => setcapacity(e.target.value)}
 				type="number"
-				placeholder="Capacity" required/>
+				placeholder="Capacity" required/></Col>
 </Form.Group>
 
 
